@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch information about coins and tokens supported by Trezor and update it in coins_details.json."""
+"""Fetch information about coins and tokens supported by Cerberus and update it in coins_details.json."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ DEFINITIONS_LATEST = coin_info.load_json(DEFINITIONS_LATEST_JSON)
 SUITE_SUPPORT = coin_info.load_json(SUITE_SUPPORT_JSON)
 
 # automatic wallet entries
-WALLET_SUITE = {"Trezor Suite": "https://cerberus.uraanai.com/cerberus-suite"}
+WALLET_SUITE = {"Cerberus Suite": "https://cerberus.uraanai.com/cerberus-suite"}
 WALLET_NEM = {"Nano Wallet": "https://nemplatform.com/wallets/#desktop"}
 WALLETS_ETH_3RDPARTY = {
     "MyCrypto": "https://mycrypto.com",
@@ -49,7 +49,7 @@ WALLETS_ETH_3RDPARTY = {
 }
 
 
-TREZOR_KNOWN_URLS = (
+CERBERUS_KNOWN_URLS = (
     "https://suite.cerberus.uraanai.com",
     "https://wallet.cerberus.uraanai.com",
     "https://cerberus.uraanai.com/cerberus-suite",
@@ -144,8 +144,8 @@ def check_missing_data(coins: Coins) -> Coins:
                 LOG.warning(f"{k}: Bad wallet entry")
                 hide = True
                 continue
-            if "trezor" in name.lower() and url not in TREZOR_KNOWN_URLS:
-                LOG.warning(f"{k}: Strange URL for Trezor Wallet")
+            if "cerberus" in name.lower() and url not in CERBERUS_KNOWN_URLS:
+                LOG.warning(f"{k}: Strange URL for Cerberus Wallet")
 
         if not any(coin["support"][model] for model in MODELS):
             LOG.info(f"{k}: Coin not enabled on either device")

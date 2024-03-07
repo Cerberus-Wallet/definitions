@@ -258,7 +258,7 @@ def _load_erc20_tokens_from_repo(networks: list[Network]) -> list[Token]:
 
 
 def _force_networks_fields_sizes_t1(networks: list[Network]) -> None:
-    """Check sizes of embedded network fields for Trezor model 1 based on
+    """Check sizes of embedded network fields for Cerberus model 1 based on
     "legacy/firmware/protob/messages-ethereum.options"."""
     # EthereumNetworkInfo.name     max_size:256
     # EthereumNetworkInfo.shortcut max_size:256
@@ -274,7 +274,7 @@ def _force_networks_fields_sizes_t1(networks: list[Network]) -> None:
 
 
 def _force_tokens_fields_sizes_t1(tokens: list[Token]) -> None:
-    """Check sizes of embeded token fields for Trezor model 1 based on
+    """Check sizes of embeded token fields for Cerberus model 1 based on
     "legacy/firmware/protob/messages-ethereum.options"."""
     # EthereumTokenInfo.name    max_size:256
     # EthereumTokenInfo.symbol  max_size:256 (here stored under "shortcut")
@@ -339,7 +339,7 @@ def _force_tokens_fields_sizes_t1(tokens: list[Token]) -> None:
     "-c",
     "--check-builtin",
     is_flag=True,
-    help="Compares results with Trezor builtin definitions.",
+    help="Compares results with Cerberus builtin definitions.",
 )
 @click.option("-v", "--verbose", is_flag=True, help="Display more info")
 def download(
