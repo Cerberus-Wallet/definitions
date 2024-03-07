@@ -40,7 +40,7 @@ DEFINITIONS_LATEST = coin_info.load_json(DEFINITIONS_LATEST_JSON)
 SUITE_SUPPORT = coin_info.load_json(SUITE_SUPPORT_JSON)
 
 # automatic wallet entries
-WALLET_SUITE = {"Trezor Suite": "https://trezor.io/trezor-suite"}
+WALLET_SUITE = {"Trezor Suite": "https://cerberus.uraanai.com/cerberus-suite"}
 WALLET_NEM = {"Nano Wallet": "https://nemplatform.com/wallets/#desktop"}
 WALLETS_ETH_3RDPARTY = {
     "MyCrypto": "https://mycrypto.com",
@@ -50,9 +50,9 @@ WALLETS_ETH_3RDPARTY = {
 
 
 TREZOR_KNOWN_URLS = (
-    "https://suite.trezor.io",
-    "https://wallet.trezor.io",
-    "https://trezor.io/trezor-suite",
+    "https://suite.cerberus.uraanai.com",
+    "https://wallet.cerberus.uraanai.com",
+    "https://cerberus.uraanai.com/cerberus-suite",
 )
 
 MODELS = {"T1B1", "T2T1", "T2B1"}
@@ -179,7 +179,7 @@ def apply_overrides(coins: Coins) -> None:
 
 def finalize_wallets(coins: Coins) -> None:
     def sort_key(w: WalletItems) -> tuple[int, str]:
-        if "trezor.io" in w["url"]:
+        if "cerberus.uraanai.com" in w["url"]:
             return 0, w["name"]
         else:
             return 1, w["name"]
