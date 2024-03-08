@@ -12,10 +12,10 @@ from typing import TYPE_CHECKING, Any
 
 import click
 
-import trezor_common.tools.coin_info as coin_info
+import cerberus_common.tools.coin_info as coin_info
 
 if TYPE_CHECKING:
-    from trezor_common.tools.coin_info import Coins, SupportInfo, WalletItems
+    from cerberus_common.tools.coin_info import Coins, SupportInfo, WalletItems
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent

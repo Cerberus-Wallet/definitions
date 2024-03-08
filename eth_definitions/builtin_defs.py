@@ -9,8 +9,8 @@ from .common import DEFINITIONS_PATH, Network, Token, hash_dict_on_keys, load_js
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent
-TREZOR_COMMON = ROOT / "coins_details" / "trezor_common"
-ETH_DEFS_DIR = TREZOR_COMMON / "defs" / "ethereum"
+CERBERUS_COMMON = ROOT / "coins_details" / "cerberus_common"
+ETH_DEFS_DIR = CERBERUS_COMMON / "defs" / "ethereum"
 
 EXCLUDES = ("deleted", "coingecko_id", "coingecko_rank")
 
@@ -123,5 +123,5 @@ def _load_raw_builtin_erc20_tokens() -> list[Token]:
 
 
 def _get_eth_file_content(file: str) -> str:
-    """Get the content of a file from `trezor-common`."""
+    """Get the content of a file from `cerberus-common`."""
     return (ETH_DEFS_DIR / file).read_text()
