@@ -4,6 +4,6 @@
 [submodule "ethereum-lists/chains"]
 	path = ethereum-lists/chains
 	url = https://github.com/ethereum-lists/chains
-[submodule "coins_details/cerberus_common"]
+[submodule "cerberus_common"]
 	path = coins_details/cerberus_common
 	url = git@github.com:Cerberus-Wallet/cerberus-common.git
